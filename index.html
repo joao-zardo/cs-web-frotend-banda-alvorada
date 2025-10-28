@@ -1,0 +1,98 @@
+<!DOCTYPE html> <!--aqui é HTML-->
+<html lang="pt-BR"> <!--português-Brasil-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banda Marcial Alvorada | Música e Cidadania em Erechim</title> <!--título da página-->
+    <!-- Google Fonts - Inter para não deixar o site com aparência muito simples -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"> <!--linka o css-->
+</head>
+<body> <!-- Corpo do site -->
+     <header class="main-header">
+        <nav class="main-nav">           
+            <a href="index.html" class="logo">
+                <img src="imagens/logo.png" alt="Logo da Banda Alvorada">
+            </a>
+            <ul>
+            <li><a href="index.html" class="nav-link active">Início</a></li>
+            <li><a href="projetos.html" class="nav-link">Projetos Sociais</a></li>
+            <li><a href="cadastro.html" class="cta-button">Cadastre-se</a></li> <!--Call to Action, botão que chama para ação, neste caso para cadastro-->
+            </nav>
+    </header>
+    <main class="container"> <!--Conteúdo principal da página-->
+
+        <section class="welcome-section"> <!--Seção de boas-vindas-->
+            <h1>Banda Marcial Alvorada</h1> <!--H1 é o título mais importante da página-->
+            <p>Música, disciplina e transformação social. Conheça a nossa batida que move corações e constrói futuros.</p> <!--Parágrafo introdutório-->
+            <img src="imagens/hero-desktop.jpg" alt="Apresentação da Banda Marcial Alvorada em um desfile cívico" style="margin-top: 2rem; border-radius: 0.5rem;"> <!--Imagem principal da página-->
+        </section>
+
+        <section id="sobre" class="about-section"> <!--Seção sobre nós. O uso do id serve para permitir a criação de links diretos para partes específicas do conteúdo da página (id="sobre", id="valores", id="contato")-->
+            <h2 class="section-title">Nossa História</h2> <!--H2 é o segundo título mais importante da página-->
+            <div class="grid"> <!--div "pai" que cria o espaço da grade-->
+                <div> <!--div "filho" define o que vai na primeira coluna-->
+                    <p>
+                        Fundada em 1998, a Banda Marcial Alvorada nasceu do sonho de oferecer uma oportunidade de desenvolvimento cultural e social para jovens da nossa comunidade. O que começou com alguns instrumentos e muita vontade, hoje se tornou uma das mais respeitadas bandas marciais da região.
+                    </p>
+                    <p>
+                        Nossa missão vai além da música. Através da disciplina, do trabalho em equipe e da dedicação, formamos não apenas músicos, mas cidadãos conscientes e preparados para os desafios da vida.
+                    </p>
+                </div>
+                <div> <!--div "filho" define o que vai na segunda coluna-->
+                    <img src="imagens/banner-história.jpg" alt="Membros da banda ensaiando em uma sala." style="margin-top: 2rem; border-radius: 0.5rem;">
+                </div>
+            </div>
+        </section>
+
+        <section id="valores" class="values-section"> <!-- Seção de Valores -->
+            <h2 class="section-title">O que nos move</h2>
+            <div class="grid"> <!--div "pai" que cria espaço de grade para os 3 próximos cards-->
+                <div class="card"> <!--cada card é uma div, isso serve para crair um "espaço de grade"-->
+                    <h3>Disciplina</h3>
+                    <p>A base para a excelência musical e pessoal, cultivando o foco e a responsabilidade em cada membro.</p>
+                </div>
+                <div class="card">
+                    <h3>Comunidade</h3>
+                    <p>Somos uma família unida pela música, onde o apoio mútuo e o respeito são nossos maiores valores.</p>
+                </div>
+                <div class="card"> <!--a class dos cards é a mesma, pois no style.css será apenas um conjunto de códigos usado para editar os 3-->
+                    <h3>Paixão</h3>
+                    <p>A energia que nos impulsiona a superar limites e a transmitir emoção em cada nota que tocamos.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contato" class="contact-section"> <!-- Seção de Contato -->
+             <h2 class="section-title">Entre em Contato</h2>
+             <div class="grid">
+                <div class="contact-box">
+                    <h3>Nosso Endereço</h3>
+                    <p>Rua Gaurama, 210</p>
+                    <p>Centro, Erechim - RS</p>
+                    <p>CEP: 99700-000</p>
+                </div>
+                 <div class="contact-box">
+                    <h3>Fale Conosco</h3>
+                    <p><strong>Email:</strong> <!--strong significa negrito-->
+                        <a href="mailto:contato@bandaalvorada.com">contato@bandaalvorada.com</a> <!--mailto cria um link que abre o programa de email do usuário ao clicar no link-->
+                    </p>
+                    <p><strong>Telefone:</strong> <a href="tel:+5554999998888">(54) 99999-1234</a></p> <!--tel cria um link que abre o aplicativo de telefone do usuário ao clicar no link-->
+                </div>
+             </div>
+        </section>
+
+    </main>
+
+    <footer class="main-footer"> <!-- Rodapé -->
+        <div class="container">
+            <p>&copy; 2025 Banda Marcial Alvorada. Todos os direitos reservados.</p>
+            <p>Erechim, RS - CNPJ: 00.123.456/0001-78</p>
+            <p class="credits">Desenvolvido por João Zardo.</p> <!--Créditos no rodapé estilizado-->
+        </div>
+    </footer>
+
+</body>
+</html>    

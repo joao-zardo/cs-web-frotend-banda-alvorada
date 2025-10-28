@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro | Banda Marcial Alvorada</title>
+    <!-- Google Fonts - Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <nav class="main-nav">           
+            <a href="index.html" class="logo">
+                <img src="imagens/logo.png" alt="Logo da Banda Alvorada">
+            </a>
+            <ul>
+            <li><a href="index.html" class="nav-link">Início</a></li>
+            <li><a href="projetos.html" class="nav-link">Projetos Sociais</a></li>
+            <!-- O link "Cadastre-se" agora é o ativo, mas como ele é botão ele vai trocar de cor -->
+            <li><a href="cadastro.html" class="cta-button active">Cadastre-se</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+
+        <section class="form-section">
+            <h1 class="section-title">Formulário de Cadastro</h1>
+            <p>Preencha os seus dados abaixo para se juntar à nossa comunidade. Entraremos em contato em breve!</p>
+
+            <form class="main-form" action="#"> <!-- action="#" significa que o formulário não será enviado a lugar nenhum por enquanto. Sem method="POST", que é o método de envio dos dados, pra evitar erro 405 por enquanto -->
+                <!-- Uso de fieldset para agrupar campos relacionados, melhorando a acessibilidade -->
+                <fieldset> <!--Primeiro fieldset, aqui temos os dados pessoais, trata-se de um agrupamento lógico satisfazendo a demanda da tarefa-->
+                    <legend>Dados Pessoais</legend>
+                    <div class="form-group"> <!-- Estou usando divs para deixar os campos com espaçamento-->
+                        <label for="nome">Nome Completo</label>
+                        <input type="text" id="nome" name="nome" required placeholder="Digite seu nome completo"> <!-- coloquei um placeholder a mais do que tinha na aula, é um texto de exemplo-->
+                        <!-- o input traz a validação nativa com atributos HTML5, atendendo ao requisito da tarefa-->
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" name="email" required placeholder="seuemail@exemplo.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="cpf">CPF</label>
+                        <input type="text" id="cpf" name="cpf" required pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" placeholder="000.000.000-00" maxlength="14"> <!-- Diferente da aula, vai ficar bom com o JavaScript -->
+                    </div>
+                    <div class="form-group">
+                        <label for="telefone">Telefone</label>
+                        <input type="tel" id="telefone" name="telefone" required pattern="\(\d{2}\) \d{5}-\d{4}" placeholder="(00) 00000-0000" maxlength="15"> <!-- Diferente da aula, vai ficar bom com o JavaScript -->
+                    </div>
+                    <div class="form-group">
+                        <label for="nascimento">Data de Nascimento (opcional)</label>
+                        <input type="date" id="nascimento" name="nascimento"> <!-- Campo de data, deixei como não obrigatório para testar -->
+                    </div>
+                </fieldset>
+
+                <fieldset> <!--Segundo fieldset, aqui temos os dados de endereço-->
+                    <legend>Endereço</legend>
+                    <div class="form-group">
+                        <label for="cep">CEP</label>
+                        <input type="text" id="cep" name="cep" required placeholder="00000-000" maxlength="9"> <!-- 9 dígitos pois temos o hífen-->
+                    </div>
+                    <div class="form-group">
+                        <label for="endereco">Endereço (Rua e Número)</label>
+                        <input type="text" id="endereco" name="endereco" required placeholder="Ex: Rua Brasil, 123">
+                    </div>
+                    <div class="form-group">
+                        <label for="cidade">Cidade</label>
+                        <input type="text" id="cidade" name="cidade" required placeholder="Sua cidade" pattern="[A-Za-zÀ-ÿ\s]+" title="Digite apenas letras e espaços.">
+                    </div>
+                    <div class="form-group">
+                        <label for="estado">Estado</label>
+                        <input type="text" id="estado" name="estado" required placeholder="Seu estado" pattern="[A-Za-zÀ-ÿ\s]+" title="Digite apenas letras e espaços.">
+                    </div>
+                </fieldset>
+
+                <button type="submit" class="submit-button">Enviar Cadastro</button>
+            </form>
+            <img src="Imagens/junte-se.jpg" alt="Membros da banda desfilando" style="margin-top: 2rem; border-radius: 0.5rem;">
+        </section>
+
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2025 Banda Marcial Alvorada. Todos os direitos reservados.</p>
+            <p>Erechim, RS - CNPJ: 00.123.456/0001-78</p>
+            <p class="credits">Desenvolvido por João Zardo.</p>
+        </div>
+    </footer>
+</body>
+</html>
