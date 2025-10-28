@@ -1,16 +1,1 @@
-/*----------------*/
-/* --- Rodapé --- */
-/*----------------*/
-
-.main-footer { /*Aplica estilos ao elemento que tem a classe main-footer*/
-    background-color: var(--color-footer); /*Define a cor de fundo do rodapé para um cinza escuro*/
-    color: var(--color-neutraltxt-0); /*Define a cor padrão do texto dentro do rodapé como branco.*/
-    padding: var(--space-sm);
-    text-align: center;
-}
-
-.main-footer .credits { /*É um seletor mais específico que se aplica a um elemento com a classe credits que está dentro do .main-footer*/
-    font-size: var(--font-size-small); /*Texto um pouco menor que o texto principal*/
-    color: var( --color-neutral-300); /* cinza claro */
-    margin-top: var( --space-xs); /*Adiciona um pequeno espaço acima da linha dos créditos, separando-a do texto de copyright.*/
-}
+.main-footer{background-color:var(--color-footer);color:var(--color-neutraltxt-0);padding:var(--space-sm);text-align:center}.main-footer .credits{font-size:var(--font-size-small);color:var(--color-neutral-300);margin-top:var(--space-xs)}

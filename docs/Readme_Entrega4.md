@@ -1,9 +1,9 @@
 # Entrega 4: Versionamento, Acessibilidade e Deploy
 ## Especificações Técnicas Obrigatórias
 ### Controle de Versão com Git/GitHub
-* [ ] Implementar estratégia de branching GitFlow;
-* [ ] Criar histórico de commits semântico e organizado;
-* [ ] Desenvolver sistema de releases com versionamento semântico.
+* [X] Implementar estratégia de branching GitFlow;
+* [X] Criar histórico de commits semântico e organizado;
+* [X] Desenvolver sistema de releases com versionamento semântico.
 
 ### Acessibilidade (WCAG 2.1 Nível AA)
 * [X] Implementar navegação por teclado em todos os componentes;
@@ -18,7 +18,8 @@
     * Funcionalidades adicionadas para seleção no rodapé.
 
 ### Otimização para Produção
-* [ ] Implementar minificação de CSS, JavaScript e HTML;
+* [X] Implementar minificação de CSS, JavaScript e HTML;
+    * Minificação implementada
 * [X] Configurar compressão de imagens.
     * Imagens otimizadas com extensão .webp
 
@@ -26,8 +27,8 @@
 ### Repositório GitHub Completo
 * [X] Código fonte versionado;
 * [X] Histórico de commits organizado;
-* [ ] Pull Requests documentados;
-* [ ] Issues e milestones utilizados.
+* [X] Pull Requests documentados;
+* [X] Issues e milestones utilizados.
 
 ### Documentação Técnica
 * [X] README profissional completo.

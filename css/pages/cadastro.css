@@ -1,18 +1,1 @@
-/*--------------------------------------------*/
-/* --- Especificidades da Página Cadastro --- */
-/*--------------------------------------------*/
-
-.form-section {
-    max-width: 48rem; /* 768px */
-    margin: 0 auto; /* Centraliza a seção do formulário */
-    background-color: var(--color-neutral-0);
-    padding: var(--space-lg);
-    border-radius: 0.5rem;
-    box-shadow: var(--box-shadow-md);
-}
-
-.form-section p {
-    text-align: center;
-    margin-bottom: var(--space-lg);
-    color: var(--color-neutral-500);
-}
+.form-section{max-width:48rem;margin:0 auto;background-color:var(--color-neutral-0);padding:var(--space-lg);border-radius:.5rem;box-shadow:var(--box-shadow-md)}.form-section p{text-align:center;margin-bottom:var(--space-lg);color:var(--color-neutral-500)}
