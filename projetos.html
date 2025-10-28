@@ -8,21 +8,44 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Link para o mesmo arquivo de estilos -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
 
      <header class="main-header">
-        <nav class="main-nav">           
-            <a href="index.html" class="logo">
-                <img src="imagens/logo.png" alt="Logo da Banda Alvorada">
-            </a>
-            <ul>
-            <li><a href="index.html" class="nav-link">Início</a></li>
-            <li><a href="projetos.html" class="nav-link active">Projetos Sociais</a></li>
-            <li><a href="cadastro.html" class="cta-button">Cadastre-se</a></li> <!--Call to Action, botão que chama para ação, neste caso para cadastro-->
-            </nav>
+  <nav class="main-nav">
+    
+    <a href="index.html" class="logo">
+      <img src="imagens/logo.png" alt="Logo da Banda Alvorada">
+    </a>
+
+    <button class="hamburger-menu" 
+            aria-label="Abrir menu" 
+            aria-expanded="false" 
+            aria-controls="nav-links">
+      &#9776; </button>
+    
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html" class="nav-link">Início</a></li>
+<li class="dropdown-item"> 
+      
+      <a href="projetos.html" class="nav-link active">
+        Projetos Sociais
+        <span class="seta-desktop">&#9662;</span> 
+      </a>
+      
+      <ul class="submenu">
+        <li><a href="projetos.html#oficinas">Oficinas Musicais</a></li>
+        <li><a href="projetos.html#solidaria">Conforto Musical</a></li>
+        <li><a href="projetos.html#beneficente">Concerto Solidário</a></li>
+      </ul>
+      
+    </li>
+      <li><a href="membros.html" class="nav-link">Equipe</a></li>
+      <li><a href="cadastro.html" class="cta-button">Cadastre-se</a></li>
+    </ul>
+
+  </nav>
     </header>
 
     <main class="container">
@@ -50,7 +73,42 @@
             </div>
         </section>
 
-        <section id="voluntariado" class="values-section"> <!-- Seção de Voluntariado, utiliza a mesma estrutura dos valores -->
+<section id="solidaria" class="about-section">
+            <h2 class="section-title">Alvorada Solidária: Música em Hospitais e Casas de Repouso</h2>
+            <div class="grid">
+                <div>
+                    <img src="Imagens/apresentacao-repouso.jpg" alt="Membros da banda tocando para idosos." style="margin-top: 2rem; border-radius: 0.5rem;">
+                </div>
+                <div>
+                    <p>
+                        Acreditamos no poder terapêutico da música. Por isso, organizamos visitas e apresentações especiais em formato reduzido para instituições de longa permanência (casas de repouso), hospitais e centros de acolhimento em nossa cidade.
+                    </p>
+                    <p>
+                        Nosso objetivo é levar alegria, conforto e um momento de descontração para pessoas que enfrentam rotinas difíceis ou que possuem mobilidade reduzida, compartilhando nossa arte e oferecendo apoio emocional através das melodias.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+<section id="beneficente" class="about-section">
+            <h2 class="section-title">Concerto Beneficente: Trocando Notas por Alimentos</h2>
+            <div class="grid">
+                <div>
+                    <p>
+                        Unimos nossa paixão pela música à necessidade da comunidade. Semestralmente, promovemos um "Ensaio Aberto Beneficente" em uma praça pública, convidando toda a população para assistir e participar.
+                    </p>
+                    <p>
+                        A entrada para o evento é simbólica: pedimos a doação de 1kg de alimento não perecível. Todos os itens arrecadados são integralmente destinados a instituições de caridade locais que amparam famílias em situação de vulnerabilidade.
+                    </p>
+                </div>
+                <div>
+                    <img src="Imagens/concerto-beneficente.jpg" alt="Público assistindo a banda em uma praça, com caixas de arrecadação de alimentos ao lado." style="margin-top: 2rem; border-radius: 0.5rem;">
+                </div>
+            </div>
+        </section>
+
+        <section id="voluntariado" class="cards-section"> <!-- Seção de Voluntariado, utiliza a mesma estrutura dos valores -->
             <h2 class="section-title">Faça Parte da Mudança</h2>
             <div class="grid">
                 <div class="card">
@@ -93,6 +151,6 @@
             <p class="credits">Desenvolvido por João Zardo.</p>
         </div>
     </footer>
-
+    <script src="js/script.js"></script> 
 </body>
 </html>

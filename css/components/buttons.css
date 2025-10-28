@@ -1,0 +1,71 @@
+/*----------------*/
+/* --- Botões --- */
+/*----------------*/
+
+/* Estilo do botão CTA no menu mobile */
+.cta-button {
+  background-color: var(--color-secondary-base); /* Cor do botão CTA */
+  margin: 0;
+  border-radius: 0;
+}
+
+@media (min-width: 768px) {
+    .cta-button { /* Call to Action - Botão de Chamada para Ação */
+    background-color: var(--color-secondary-base);
+    color: var(--color-neutral-0); /* Texto branco */
+    font-weight: var(--font-weight-bold); /* Texto em negrito */
+    padding: var(--space-xs) var(--space-sm); /* Espaçamento interno para não ficar "apertado" */
+    border-radius: 0.5rem; /* Bordas arredondadas */
+    transition: var(--transition-back); /* Transição suave para a mudança de cor ao passar o mouse */
+    margin-left: var(--space-sm); /* Espaçamento à esquerda para separar do link anterior */
+}
+
+.cta-button:hover {
+    background-color: var(--color-secondary-dark); /* Amarelo mais escuro quando o mouse passa por cima do botão*/
+}
+
+/* --- Adicionado para o botão de cadastro ativo --- */
+.nav-links .cta-button.active {
+    background-color: var(--color-primary-base);
+    color: var(--color-neutral-300);
+    cursor: default; /* Impede o efeito hover e indica que a página já está ativa */
+}
+}
+
+.project-button {
+  background-color: var(--color-secondary-base);
+  color: var( --color-neutral-0);
+  padding: var(--space-xs);
+  border-radius: 0.5rem;
+  margin-top: var(--space-md);
+  text-align: center;
+}
+
+/* --- Botão enviar cadastro --- */
+
+.submit-button {
+    display: block;
+    width: 100%;
+    background-color: var(--color-primary-base);
+    color: var(--color-neutral-0);
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-h4);
+    padding: var(--space-sm);
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: var(--transition-back);
+}
+
+#modal-botao-cancelar {
+    background-color: var(--color-secondary-base);
+}
+
+.submit-button:hover {
+    background-color: var(--color-primary-dark);
+}
+
+.submit-button:disabled {
+    background-color: var(--color-neutral-300); /* Cinza claro para indicar que está desativado */
+    cursor: not-allowed; /* Muda o cursor para indicar que o botão não pode ser clicado */
+}

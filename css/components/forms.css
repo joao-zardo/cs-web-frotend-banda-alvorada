@@ -1,0 +1,309 @@
+/*--------------------------------*/
+/* --- Componente: Formulário --- */
+/*--------------------------------*/
+
+.main-form fieldset {
+    border: 1px solid var(--color-neutral-200);
+    border-radius: 0.5rem;
+    padding: var(--space-md);
+    margin-bottom: var(--space-lg);
+}
+
+.main-form legend {
+    font-size: var(--font-size-h4);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-primary-dark);
+    padding: 0 var(--space-xs);
+}
+
+.form-group {
+    margin-bottom: var(--space-md);
+}
+
+.form-group:last-child { /* Esta é uma "pseudo-classe" que significa "o último filho"*/
+    margin-bottom: 0; /* Remove a margem inferior do último grupo de formulário para evitar espaço extra desnecessário */
+}
+
+.form-group label {
+    display: block; /* Faz o label ocupar toda a largura disponível, garantindo que o input fique na linha de baixo */
+    font-weight: var(--font-weight-regular);
+    margin-bottom: var(--space-xs);
+    color: var(--color-neutral-700);
+}
+
+.form-group input {
+    box-sizing: border-box;
+    width: 100%;
+    padding: var(--space-sm);
+    font-size: var( --font-size-p);
+    border: 1px solid var( --color-neutral-300);
+    border-radius: 0.25rem;
+    transition: var(--transition-border), var(--transition-box);
+}
+
+.form-group input:focus { /* aplica-se a um campo <input> apenas no exato momento em que ele está "em foco", ou seja, quando o cursor do utilizador está a piscar dentro dele.*/
+    outline: none; /* Remove a borda azul padrão que alguns navegadores aplicam ao focar um campo */
+    border-color: var(--color-primary-dark); /* Cria a borda azul no tom da identidade visual da banda */
+    box-shadow: var(--box-shadow-md);
+}
+
+/*----------------------------------------*/
+/* --- Validação Visual de Formulário --- */
+/*----------------------------------------*/
+
+/* A mensagem de erro (o <small>) */
+.validation-message {
+    display: none; /* Começa escondida */
+    font-size: var( --font-size-small); /* Um pouco menor que o texto normal */
+    font-weight: var(--font-weight-medium);
+    color: var(--color-danger); /* Cor vermelha */
+    margin-top: var(--space-xs);
+}
+
+/* * ESTADOS DE VALIDAÇÃO* O JavaScript vai adicionar a classe "error" ou "success" ao .form-group*/
+
+/* --- Estado de ERRO --- */
+.form-group.error .validation-message {
+    display: block; /* Mostra a mensagem de erro */
+}
+
+.form-group.error input,
+.form-group.error textarea {
+    border-color: var(--color-danger); /* Borda do input fica vermelha */
+    background-color: var(--color-danger-light-bg); /* Fundo levemente vermelho */
+}
+
+/* Sobrescreve o :focus azul para ser vermelho quando há erro */
+.form-group.error input:focus {
+    border-color: var(--color-danger);
+    /* Sombra vermelha no focus */
+    box-shadow: var(--box-shadow-danger); 
+}
+
+
+/* --- Estado de SUCESSO --- */
+.form-group.success input,
+.form-group.success textarea {
+    border-color: var(--color-success); /* Borda verde */
+}
+
+/* Sobrescreve o :focus azul para ser verde quando há sucesso */
+.form-group.success input:focus {
+    border-color: var(--color-success);
+    /* Sombra verde no focus */
+    box-shadow: var(--box-shadow-success);
+}
+
+
+/*----------------------------------*/
+/* --- Sistema de Tags e Badges --- */
+/*----------------------------------*/
+
+.tags-container {
+    display: flex; /* Alinha as tags */
+    flex-wrap: wrap; /* Faz as tags quebrarem para a linha de baixo */
+    gap: var(--space-sm); /* Um espaço entre cada tag */
+}
+
+.tag {
+    display: inline-block;
+    padding: 0.35rem 0.75rem;
+    font-size: var(--font-size-small);
+    font-weight: var(--font-weight-medium);
+    background-color: var(--color-neutral-100);
+    color: var(--color-neutral-700);
+    border-radius: 1.5rem; /* Formato de "pílula" */
+    cursor: pointer;
+    transition: var(--transition-base);
+    border: 1px solid var(--color-neutral-200);
+}
+
+/* Estado de :hover (passar o mouse) */
+.tag:hover {
+    background-color: var(--color-neutral-200);
+    transform: var(--transition-translate-light); /* Efeito de "levantar" */
+}
+
+/* Estado de :focus (para acessibilidade com teclado) */
+.tag:focus {
+    outline: none;
+    border-color: var(--color-primary-dark);
+    box-shadow: var(--box-shadow-forms); /* Sombra de foco */
+}
+
+/* ESTADO DE TAG SELECIONADA O JavaScript vai adicionar a classe "selected" na tag clicada */
+.tag.selected {
+    background-color: var(--color-primary-dark);
+    color: var(--color-neutral-0); /* Texto branco */
+    font-weight: var(--font-weight-bold);
+    transform: scale(1.05); /* Efeito de "crescer" */
+}
+
+/*-----------------------------------------*/
+/* --- Componentes de Feedback Globais --- */
+/*-----------------------------------------*/
+
+/* --- 2a. Alertas (Alerts) --- */
+.alert {
+    padding: var(--space-md);
+    margin-bottom: var(--space-md);
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+    font-weight: var(--font-weight-medium);
+}
+
+.alert-danger {
+    color: var(--color-danger-dark-text);
+    background-color: var(--color-danger-light-bg);
+    border-color: var(--color-danger-border);
+}
+
+/* Alerta de Sucesso */
+.alert-success {
+    color: var(--color-success-dark-text);
+    background-color: var(--color-success-light-bg);
+    border-color: var(--color-success-border);
+}
+
+
+/* --- Modal (Pop-up de Confirmação) --- */
+
+/* Um fundo escuro que cobre a tela */
+.modal-backdrop {
+    position: fixed; /* Cobre a tela inteira */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    
+    /* Centraliza a caixa do modal */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    z-index: 1010; /* Fica em cima de tudo */
+
+    /* Animação de entrada (fade-in) */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* A caixa branca do modal */
+.modal {
+    background-color: var(--color-neutral-0);
+    padding: var(--space-lg);
+    border-radius: 0.5rem;
+    box-shadow: var(--box-shadow-lg);
+    max-width: 500px;
+    width: 90%;
+
+    /* Animação de entrada (zoom-in) */
+    transform: scale(0.9);
+    transition: var( --transition-transform);
+}
+
+/* * ESTADO ATIVO DO MODAL * O JavaScript vai adicionar a classe "show" ao .modal-backdrop */
+.modal-backdrop.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-backdrop.show .modal {
+    transform: scale(1);
+}
+
+.modal h2 {
+    margin-top: 0;
+    color: var(--color-primary-dark);
+}
+
+.modal-botoes {
+    display: flex;
+    justify-content: flex-end; /* Botões à direita */
+    gap: var(--space-sm);
+    margin-top: var(--space-lg);
+}
+
+/* Estilo para botão secundário (Cancelar) */
+.botao-secundario {
+    /* Baseado nos seus estilos de botão */
+    padding: var(--space-sm) var(--space-md);
+    font-size: var(--font-size-p);
+    font-weight: var(--font-weight-medium);
+    border: 1px solid var(--color-neutral-300);
+    background-color: var(--color-neutral-100);
+    color: var(--color-neutral-700);
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: var(--transition-bg);
+}
+.botao-secundario:hover {
+    background-color: var(--color-neutral-200);
+}
+
+/* --- Toast (Notificação de Sucesso) --- */
+.toast {
+    position: fixed;
+    bottom: var(--space-lg); /* Posição no canto */
+    right: var(--space-lg);
+    background-color: var(--color-neutral-700); /* Cor escura */
+    color: var(--color-neutral-0); /* Texto branco */
+    padding: var(--space-md);
+    border-radius: 0.25rem;
+    box-shadow: var(--box-shadow-lg);
+    z-index: 1011; /* Acima do modal */
+
+    /* Animação de entrada (slide-in) e saída (slide-out) */
+    transform: translateY(150%);
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition-base);
+}
+
+/* * ESTADO ATIVO DO TOAST * O JavaScript vai adicionar a classe "show" ao .toast */
+.toast.show {
+    transform: translateY(0); /* ponto final da animação */
+    opacity: 1;
+    visibility: visible;
+}
+
+/*-----------------------------------------*/
+/* ---  Componente: Badge (Distintivo) --- */
+/*-----------------------------------------*/
+
+/* Container para alinhar)*/
+.status-badge-container {
+    text-align: center; /* Centraliza o badge */
+    margin-bottom: var(--space-md);
+    padding: var(--space-sm);
+    background-color: var(--color-neutral-100);
+    border-radius: 0.25rem;
+    border: 1px solid var(--color-neutral-200);
+}
+
+.badge-title {
+    font-weight: var(--font-weight-medium);
+    color: var(--color-neutral-700);
+    margin-right: var(--space-xs);
+    font-size: var(--font-size-p);
+}
+
+/* O Badge (o distintivo visual) */
+.badge {
+    display: inline-block;
+    padding: 0.25rem 0.6rem;
+    font-size: var(--font-size-p);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-neutral-0); /* Texto branco */
+    background-color: var(--color-primary-dark); /* Cor principal */
+    border-radius: 0.25rem; /* Mais "quadradinho" que a tag */
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Variação de cor (ex: para "Apoio") */
+.badge.badge-apoio {
+    background-color: var(--color-info);
+}

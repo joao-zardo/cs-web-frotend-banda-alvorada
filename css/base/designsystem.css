@@ -1,0 +1,95 @@
+/* -------------------- */
+/* --- DESIGN SYSTEM ---*/
+/* -------------------- */
+/*
+  Este arquivo centraliza todas as decisões de design do projeto,
+  como cores, fontes e espaçamentos. Usamos variáveis CSS (custom properties)
+  para que possamos reutilizá-las em todo o site e fazer alterações
+  de forma fácil e consistente.
+*/
+
+:root {
+  /* --- PALETA DE CORES (Mínimo de 8 cores) --- */
+  /* Cores Primárias (Azul) */
+  --color-primary-dark: #1E3A8A;   /* Azul Escuro */
+  --color-primary-base: #152cb3;   /* Azul Principal */
+  --color-primary-light: #2563eb;  /* Azul Claro */
+
+  /* Cores Secundárias (Amarelo) */
+  --color-secondary-dark: #d9a106; /* Amarelo Escuro */
+  --color-secondary-base: #FBBF24; /* Amarelo Principal */
+  --color-secondary-light: #FEF3C7;/* Amarelo Claro */
+  
+  /* Cores Neutras */
+  --color-neutral-900: #111827; /* Quase Preto (Títulos) */
+  --color-neutral-700: #374151; /* Cinza Escuro (Texto) */
+  --color-neutral-500: #6B7280; /* Cinza Médio (Texto Secundário) */
+  --color-neutral-300: #D1D5DB; /* Cinza Médio (Bordas) */
+  --color-neutral-200: #e2e8f0; /* Cinza Suave/Ardósia (Form) */
+  --color-neutral-100: #F3F4F6; /* Cinza Claro (Fundos) */
+  --color-neutral-0: #FFFFFF;   /* Branco */
+
+  /* Cores de Feedback (para alertas, etc.) */
+  --color-success-text: #065F46;      /* Verde escuro para texto */
+  --color-success-border: #6EE7B7;    /* Verde médio para borda */
+  --color-success-bg: #D1FAE5;        /* Verde claro para fundo */
+  
+  --color-error-text: #991B1B;        /* Vermelho escuro para texto */
+  --color-error-border: #FCA5A5;      /* Vermelho médio para borda */
+  --color-error-bg: #FEE2E2;          /* Vermelho claro para fundo */
+
+
+  /* --- TIPOGRAFIA HIERÁRQUICA (Mínimo de 5 tamanhos) --- */
+  --font-base: 'Inter', sans-serif;
+  
+  --font-size-h1: 3rem;      /* Equivale a 48px. Usarei rem pois verifiquei que tem maior acessibilidade */
+  --font-size-h2: 2.25rem;   /* 36px */
+  --font-size-h3: 1.75rem;   /* 28px */
+  --font-size-h4: 1.25rem;   /* 20px */
+  --font-size-p: 1rem;     /* 16.00px (Base) */
+  --font-size-small: 0.875rem; /* 14px - 6º tamanho de fonte, objetivo alcançado */
+
+  --font-weight-regular: 400; /* Espessura padrão */
+  --font-weight-medium: 550; /* Espessura média */
+  --font-weight-bold: 700; /* Espessura negrito */
+
+  /* --- SISTEMA DE ESPAÇAMENTO MODULAR (Base 8px) Não usar em bordas --- */
+  --space-xs:  0.5rem;  /* 8px */
+  --space-sm:  1rem;    /* 16px */
+  --space-md:  1.5rem;  /* 24px */
+  --space-lg:  2rem;    /* 32px */
+  --space-xl:  3rem;    /* 48px */
+  --space-xxl: 4rem;    /* 64px - 6º espaçamento modular, objetivo alcançado */
+
+  /* --- Outras Variáveis de UI --- */
+  --border-radius-sm: 0.25rem; /* borda arredondada pequena */
+  --border-radius-md: 0.5rem; /* borda arredondada média */
+  --border-radius-lg: 1rem; /* borda arredondada grande */
+  --box-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1); /* sombra média */
+  --box-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1); /* sombra grande */
+  --box-shadow-forms: 0 0 0 3px rgba(0, 86, 179, 0.25);
+  --transition-base: all 0.3s ease; /* transição padrão */
+  --transition-back: background-color 0.3s ease; /* transição para background-color */
+  --transition-box: box-shadow 0.3s ease; /* transição para box-shadow */
+  --transition-transform: transform 0.3s ease; /* transição para transform */
+  --transition-translate: translateY(-5px);
+  --transition-translate-light: translateY(-5px);
+  --transition-border: border-color 0.3s ease;
+  --transition-seta: transform 0.2s ease-in-out;
+
+
+/* Cores de Feedback (para alertas, etc.) */
+  --color-danger: #dc3545;
+  --color-danger-dark-text: #721c24;
+  --color-danger-light-bg: #f8d7da;
+  --color-danger-border: #f5c6cb;
+  --box-shadow-danger: 0 0 0 3px rgba(220, 53, 69, 0.25);
+
+  --color-success: #28a745;
+  --color-success-dark-text: #155724;
+  --color-success-light-bg: #d4edda;
+  --color-success-border: #c3e6cb;
+  --box-shadow-success: 0 0 0 3px rgba(40, 167, 69, 0.25);
+
+  --color-info: #17a2b8;
+}

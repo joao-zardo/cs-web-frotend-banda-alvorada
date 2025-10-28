@@ -1,0 +1,35 @@
+/*----------------------------------------*/
+/* --- Reset Básico e Estilos Globais --- */
+/*----------------------------------------*/
+
+* { /* O asterisco é o "seletor universal", seleciona todos os elementos da página */
+    margin: 0;
+    padding: 0; /* Remove margens e espaçamentos padrão criados pelos navegadores */
+}
+
+body { /* Estilos aplicados ao corpo da página "body" */
+    font-family: var(--font-base); /* Define a fonte principal do site, se não conseguir a fonte Inter, vai usar uma fonte genérica */
+    background-color: var(--color-neutral-100); /* cor padrão do fundo */
+    color: var(--color-neutral-700); /* cor padrão do texto */
+    line-height: 1.6; /* espaçamento entre as linhas de um parágrafo */
+}
+
+.container { /* Classe utilitária para centralizar o conteúdo e limitar a largura máxima */
+    max-width: 1200px; /* Largura máxima do conteúdo para não esticar muito em telas grandes */
+    margin-left: auto; /* Centraliza horizontalmente, juntamente com a linha de código abaixo */
+    margin-right: auto;
+    padding-left: var(--space-md); /* Espaçamento interno nas laterais, garante que o conteúdo nunca cole nas bordas da tela */
+    padding-right: var(--space-md); /*Padding é o espaço que fica entre o conteúdo e a borda dessa caixa*/
+}
+
+img { /* Garante que as imagens sejam responsivas, ou seja se adaptam ao tamanho da tela*/
+    max-width: 100%; /* A imagem nunca vai ultrapassar a largura do seu contêiner pai */
+    height: auto; /* Mantém a proporção original da imagem */
+    display: block; /* Remove espaçamentos indesejados abaixo das imagens */
+    margin: 0 auto; /* Centraliza a imagem horizontalmente */
+}
+
+a {
+    color: inherit; /* Herda a cor do elemento pai */
+    text-decoration: none; /* Remove o sublinhado padrão dos links */
+}

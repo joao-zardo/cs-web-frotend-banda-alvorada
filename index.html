@@ -8,20 +8,47 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css"> <!--linka o css-->
+       <link rel="stylesheet" href="css/main.css">
 </head>
 <body> <!-- Corpo do site -->
-     <header class="main-header">
-        <nav class="main-nav">           
-            <a href="index.html" class="logo">
-                <img src="imagens/logo.png" alt="Logo da Banda Alvorada">
-            </a>
-            <ul>
-            <li><a href="index.html" class="nav-link active">Início</a></li>
-            <li><a href="projetos.html" class="nav-link">Projetos Sociais</a></li>
-            <li><a href="cadastro.html" class="cta-button">Cadastre-se</a></li> <!--Call to Action, botão que chama para ação, neste caso para cadastro-->
-            </nav>
-    </header>
+<header class="main-header">
+  <nav class="main-nav">
+    
+    <a href="index.html" class="logo">
+      <img src="imagens/logo.png" alt="Logo da Banda Alvorada">
+    </a>
+
+    <button class="hamburger-menu" 
+            aria-label="Abrir menu" 
+            aria-expanded="false" 
+            aria-controls="nav-links">
+      &#9776; </button>
+    
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html" class="nav-link active">Início</a></li>
+
+<li class="dropdown-item"> 
+      
+      <a href="projetos.html" class="nav-link">
+        Projetos Sociais
+        <span class="seta-desktop">&#9662;</span> 
+      </a>
+      
+      <ul class="submenu">
+        <li><a href="projetos.html#oficinas">Oficinas Musicais</a></li>
+        <li><a href="projetos.html#solidaria">Conforto Musical</a></li>
+        <li><a href="projetos.html#beneficente">Concerto Solidário</a></li>
+      </ul>
+      
+    </li>
+
+      <li><a href="membros.html" class="nav-link">Equipe</a></li>
+      <li><a href="cadastro.html" class="cta-button">Cadastre-se</a></li>
+    </ul>
+
+  </nav>
+</header>
+
     <main class="container"> <!--Conteúdo principal da página-->
 
         <section class="welcome-section"> <!--Seção de boas-vindas-->
@@ -47,7 +74,7 @@
             </div>
         </section>
 
-        <section id="valores" class="values-section"> <!-- Seção de Valores -->
+        <section id="valores" class="cards-section"> <!-- Seção de Valores -->
             <h2 class="section-title">O que nos move</h2>
             <div class="grid"> <!--div "pai" que cria espaço de grade para os 3 próximos cards-->
                 <div class="card"> <!--cada card é uma div, isso serve para crair um "espaço de grade"-->
@@ -61,6 +88,27 @@
                 <div class="card"> <!--a class dos cards é a mesma, pois no style.css será apenas um conjunto de códigos usado para editar os 3-->
                     <h3>Paixão</h3>
                     <p>A energia que nos impulsiona a superar limites e a transmitir emoção em cada nota que tocamos.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="projetos" class="cards-section"> <!-- Seção de Valores -->
+            <h2 class="section-title">Nossos Projetos</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Oficinas Musicais</h3>
+                    <p>Levamos a música para além dos nossos ensaios. Nossos membros realizam oficinas gratuitas de percussão e sopro em escolas públicas e centros comunitários da região. </p>
+                    <a href="projetos.html#oficinas" class="project-button">Leia Mais</a>
+                </div>
+                <div class="card">
+                    <h3>Conforto Musical</h3>
+                    <p>Organizamos visitas e apresentações especiais em formato reduzido para instituições de longa permanência (casas de repouso), hospitais e centros de acolhimento em nossa cidade.</p>
+                    <a href="projetos.html#solidaria" class="project-button">Leia Mais</a>
+                </div>
+                <div class="card"> <!--a class dos cards é a mesma, pois no style.css será apenas um conjunto de códigos usado para editar os 3-->
+                    <h3>Concerto Solidário</h3>
+                    <p>Semestralmente, promovemos um "Ensaio Aberto Beneficente" em uma praça pública, convidando toda a população para assistir e participar com 1 kg de alimento, que são destinados à instituições de caridade.</p>
+                    <a href="projetos.html#beneficente" class="project-button">Leia Mais</a>
                 </div>
             </div>
         </section>
@@ -93,6 +141,6 @@
             <p class="credits">Desenvolvido por João Zardo.</p> <!--Créditos no rodapé estilizado-->
         </div>
     </footer>
-
+    <script src="js/script.js"></script> 
 </body>
 </html>    
