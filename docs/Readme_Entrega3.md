@@ -24,4 +24,3 @@
 
 ### Forma de Entrega
 * [X] Link PÚBLICO do projeto no GitHub, com todo o código fonte, os arquivos HTML, imagens e CSS organizados em pastas.
-    * https://github.com/joao-zardo/cs-web-frontend/tree/main/assignment-2

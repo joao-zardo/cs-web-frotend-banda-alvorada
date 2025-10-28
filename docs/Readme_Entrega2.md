@@ -58,4 +58,3 @@
         * Pages: contêm estilos que são utilizados apenas em páginas específicas (cadastro.css e membros.css)
 ### 2. Forma de Entrega
 * [X] Link PÚBLICO do projeto no GitHub, com todo o código fonte e os arquivos HTML e imagens organizados em pastas.
-    * https://github.com/joao-zardo/cs-web-frontend/tree/main/assignment-2
