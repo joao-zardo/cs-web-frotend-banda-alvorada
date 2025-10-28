@@ -3,8 +3,8 @@
 /*----------------*/
 
 .main-footer { /*Aplica estilos ao elemento que tem a classe main-footer*/
-    background-color: var(--color-neutral-700); /*Define a cor de fundo do rodapé para um cinza escuro*/
-    color: var(--color-neutral-0); /*Define a cor padrão do texto dentro do rodapé como branco.*/
+    background-color: var(--color-footer); /*Define a cor de fundo do rodapé para um cinza escuro*/
+    color: var(--color-neutraltxt-0); /*Define a cor padrão do texto dentro do rodapé como branco.*/
     padding: var(--space-sm);
     text-align: center;
 }

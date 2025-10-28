@@ -12,7 +12,7 @@
 .main-form legend {
     font-size: var(--font-size-h4);
     font-weight: var(--font-weight-medium);
-    color: var(--color-primary-dark);
+    color: var(--color-primarylg-dark);
     padding: 0 var(--space-xs);
 }
 
@@ -120,7 +120,7 @@
 
 /* Estado de :hover (passar o mouse) */
 .tag:hover {
-    background-color: var(--color-neutral-200);
+    background-color: var(--color-neutraltxt-200);
     transform: var(--transition-translate-light); /* Efeito de "levantar" */
 }
 
@@ -133,8 +133,8 @@
 
 /* ESTADO DE TAG SELECIONADA O JavaScript vai adicionar a classe "selected" na tag clicada */
 .tag.selected {
-    background-color: var(--color-primary-dark);
-    color: var(--color-neutral-0); /* Texto branco */
+    background-color: var(--color-primaryck-dark);
+    color: var(--color-neutraltxt-0); /* Texto branco */
     font-weight: var(--font-weight-bold);
     transform: scale(1.05); /* Efeito de "crescer" */
 }
@@ -297,7 +297,7 @@
     font-size: var(--font-size-p);
     font-weight: var(--font-weight-bold);
     color: var(--color-neutral-0); /* Texto branco */
-    background-color: var(--color-primary-dark); /* Cor principal */
+    background-color: var(--color-primarybd-dark); /* Cor principal */
     border-radius: 0.25rem; /* Mais "quadradinho" que a tag */
     text-transform: uppercase;
     letter-spacing: 0.5px;

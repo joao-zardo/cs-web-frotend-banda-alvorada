@@ -85,6 +85,45 @@ document.addEventListener('DOMContentLoaded', () => {
             // Atualiza qual link está "ativo" no menu
             updateActiveNav(url);
 
+
+            // Lógica para rolar até o HASH (#ancora), se existir
+            // Pega o hash da URL que foi carregada (ou do link clicado)
+            // Usar link.hash (do listener de clique) é mais direto se disponível,
+            // mas pegar da 'url' funciona também.
+            const urlObject = new URL(url, window.location.origin);
+            const hash = urlObject.hash; // Pega a parte #ancora (ex: "#oficinas")
+
+            if (hash) {
+                // Remove o '#' para obter o ID
+                const elementId = hash.substring(1);
+                // Tenta encontrar o elemento na página APÓS o conteúdo ser injetado
+                // Usamos setTimeout para garantir que o DOM atualizou
+                setTimeout(() => {
+                    const targetElement = document.getElementById(elementId);
+
+                    if (targetElement) {
+                        console.log('Hash encontrado, rolando para:', elementId);
+
+                        // Calcula a posição correta, descontando o header fixo
+                        const header = document.querySelector('.main-header');
+                        const headerHeight = header ? header.offsetHeight : 0;
+                        // getBoundingClientRect dá a posição relativa à viewport
+                        const elementPosition = targetElement.getBoundingClientRect().top;
+                        // Posição absoluta = Posição relativa + Scroll Atual - Altura Header - Margem
+                        const offsetPosition = elementPosition + window.pageYOffset - headerHeight - 20; // -20 para margem
+
+                        // Rola suavemente para a posição calculada
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: "smooth"
+                        });
+                    } else {
+                        console.warn('Elemento com ID', elementId, 'não encontrado para rolar.');
+                    }
+                }, 0); // setTimeout com 0ms apenas adia a execução para o próximo ciclo de eventos
+            }
+
+
             // Se for uma navegação normal (não um "voltar"),
             // salva a nova URL no histórico do navegador.
             if (updateHistory) {
@@ -130,7 +169,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Se o link passou por todos os filtros:
         e.preventDefault(); // 1. Impede o recarregamento da página
-        loadPage(link.pathname, true, true); // 2. Carrega o conteúdo (true = scroll to top)
+        loadPage(link.href, true, true); // 2. Carrega o conteúdo (true = scroll to top)
     });
 
     // 5. LIDANDO COM OS BOTÕES "VOLTAR" E "AVANÇAR"
@@ -139,4 +178,20 @@ document.addEventListener('DOMContentLoaded', () => {
         // Carrega a página do histórico sem salvar um novo estado
         loadPage(window.location.pathname, false, false); // false = não scrollar (manter pos.)
     });
+
+    // --- 6. INICIALIZAÇÃO DA PÁGINA ATUAL ---
+    // Este bloco roda UMA VEZ no carregamento da página (ex: F5).
+    // Ele verifica em qual página estamos e executa o renderizador
+    // correto ou o script de inicialização.
+    
+    const currentPath = window.location.pathname;
+
+    // 1. Renderiza o template, se estivermos na página de membros
+    if (currentPath.includes('membros.html')) {
+        renderizarPaginaMembros();
+    }
+    
+    // 2. Atualiza o link ativo no menu (corrige o bug do sublinhado no F5)
+    updateActiveNav(currentPath);
+
 });

@@ -69,47 +69,50 @@ function renderizarPaginaMembros() {
     ];
 
     
-    /* --- 2. O TEMPLATE (O "MOLDE" HTML) --- */
-    // Esta função "desenha" um membro. Ela é inteligente e sabe quais classes CSS usar com base no 'tipo' do membro.
+/* --- 2. O TEMPLATE (O "MOLDE" HTML) --- */
     function criarCardDeMembro(membro) {
         
-        let classeDivPrincipal = '';
-        let classeParagrafo = '';
-        let textoParagrafo = '';
+        let classeArticle = '';
+        let classeHeading = ''; // O nome da classe para o H2
+        let funcaoHtml = '';    // O HTML para o parágrafo da função
 
         // Define as classes e o texto com base no 'tipo'
         if (membro.tipo === 'bandmaster') {
-            classeDivPrincipal = 'bandmaster-member';
-            classeParagrafo = 'bandmaster-member-name';
-            // (Função <parágrafo> Nome)
-            textoParagrafo = `${membro.funcao} <br> ${membro.nome}`;
+            classeArticle = 'bandmaster-member';
+            // A sua classe de nome será aplicada ao H2
+            classeHeading = 'bandmaster-member-name'; 
+            // Criamos um <p> separado para a função
+            funcaoHtml = `<p class="bandmaster-member-role">${membro.funcao}</p>`;
         } 
         else if (membro.tipo === 'board') {
-            classeDivPrincipal = 'board-member';
-            classeParagrafo = 'board-member-name';
-            textoParagrafo = `${membro.funcao} <br> ${membro.nome}`;
+            classeArticle = 'board-member';
+            classeHeading = 'board-member-name';
+            funcaoHtml = `<p class="board-member-role">${membro.funcao}</p>`;
         } 
         else { // 'team'
-            classeDivPrincipal = 'team-member';
-            classeParagrafo = 'team-member-name';
-            textoParagrafo = membro.nome;
+            classeArticle = 'team-member';
+            classeHeading = 'team-member-name';
+            // A função está vazia, então não geramos o <p>
+            funcaoHtml = ''; 
         }
 
-        // Retorna a string HTML final para este membro, usando as variáveis definidas.
+        // Retorna a string HTML final com a estrutura semântica correta
         return `
-            <div class="${classeDivPrincipal}">
+            <article class="${classeArticle}">
                 <img src="${membro.imagem}" alt="Foto de ${membro.nome}">
-                <p class="${classeParagrafo}">${textoParagrafo}</p>
-            </div>
+                
+                <h2 class="${classeHeading}">${membro.nome}</h2>
+                
+                ${funcaoHtml}
+            </article>
         `;
     }
 
 
 /* --- 3. A LÓGICA (O "RENDERIZADOR") --- */
+    // (Esta seção permanece 100% idêntica)
     const gridContainer = document.getElementById('membros-grid-container');
 
-    // IMPORTANTE: O gridContainer pode não existir se esta função for chamada
-    // na página errada, então o 'if' é crucial.
     if (gridContainer) {
         
         let htmlFinalDosCards = '';

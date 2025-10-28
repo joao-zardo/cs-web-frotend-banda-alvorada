@@ -12,48 +12,48 @@
 </head>
 <body>
 
-     <header class="main-header">
-  <nav class="main-nav">
-    
-    <a href="index.html" class="logo">
-      <img src="imagens/logo.png" alt="Logo da Banda Alvorada">
-    </a>
+<header class="main-header">
 
-    <button class="hamburger-menu" 
-            aria-label="Abrir menu" 
-            aria-expanded="false" 
-            aria-controls="nav-links">
-      &#9776; </button>
-    
-    <ul class="nav-links" id="nav-links">
-      <li><a href="index.html" class="nav-link">Início</a></li>
-<li class="dropdown-item"> 
-      
-      <a href="projetos.html" class="nav-link active">
-        Projetos Sociais
-        <span class="seta-desktop">&#9662;</span> 
-      </a>
-      
-      <ul class="submenu">
-        <li><a href="projetos.html#oficinas">Oficinas Musicais</a></li>
-        <li><a href="projetos.html#solidaria">Conforto Musical</a></li>
-        <li><a href="projetos.html#beneficente">Concerto Solidário</a></li>
-      </ul>
-      
-    </li>
-      <li><a href="membros.html" class="nav-link">Equipe</a></li>
-      <li><a href="cadastro.html" class="cta-button">Cadastre-se</a></li>
-    </ul>
+    <nav class="main-nav">  
+        <a href="index.html" class="logo">
+            <img src="imagens/logo.png" alt="Logo da Banda Alvorada">
+        </a>
 
-  </nav>
-    </header>
+        <button class="hamburger-menu" 
+        aria-label="Abrir menu" 
+        aria-expanded="false" 
+        aria-controls="nav-links">
+        &#9776; </button>
+    
+        <ul class="nav-links" id="nav-links" role="none" aria-label="Projetos Sociais">
+            <li><a href="index.html" class="nav-link">Início</a></li>
+
+            <li class="dropdown-item">  
+                <a href="projetos.html" class="nav-link active" aria-haspopup="true">
+                    Projetos Sociais
+                    <span class="seta-desktop">&#9662;</span> 
+                </a>
+      
+                <ul class="submenu">
+                    <li><a href="projetos.html#oficinas">Oficinas Musicais</a></li>
+                    <li><a href="projetos.html#solidaria">Conforto Musical</a></li>
+                    <li><a href="projetos.html#beneficente">Concerto Solidário</a></li>
+                </ul>
+      
+            </li>
+            <li><a href="membros.html" class="nav-link">Equipe</a></li>
+            <li><a href="cadastro.html" class="cta-button">Cadastre-se</a></li>
+        </ul>
+
+    </nav>
+</header>
 
     <main class="container" id="main-content">
 
         <section class="welcome-section">
             <h1>Nossos Projetos Sociais</h1>
             <p>Acreditamos no poder da música como ferramenta de inclusão e transformação. Nossos projetos são o coração da nossa missão.</p>
-            <img src="Imagens/nossos-projetos.jpg" alt="Jovens da banda com o professor" style="margin-top: 2rem; border-radius: 0.5rem;">
+            <img src="Imagens/nossos-projetos.webp" alt="Jovens da banda com o professor" style="margin-top: 2rem; border-radius: 0.5rem;">
         </section>
 
         <section id="oficinas" class="about-section">
@@ -68,7 +68,7 @@
                     </p>
                 </div>
                 <div>
-                    <img src="Imagens/oficina-musical.jpg" alt="Membro da banda ensinando criança a tocar instrumento." style="margin-top: 2rem; border-radius: 0.5rem;">
+                    <img src="Imagens/oficina-musical.webp" alt="Membro da banda ensinando criança a tocar instrumento." style="margin-top: 2rem; border-radius: 0.5rem;">
                 </div>
             </div>
         </section>
@@ -77,7 +77,7 @@
             <h2 class="section-title">Alvorada Solidária: Música em Hospitais e Casas de Repouso</h2>
             <div class="grid">
                 <div>
-                    <img src="Imagens/apresentacao-repouso.jpg" alt="Membros da banda tocando para idosos." style="margin-top: 2rem; border-radius: 0.5rem;">
+                    <img src="Imagens/apresentacao-repouso.webp" alt="Membros da banda tocando para idosos." style="margin-top: 2rem; border-radius: 0.5rem;">
                 </div>
                 <div>
                     <p>
@@ -103,7 +103,7 @@
                     </p>
                 </div>
                 <div>
-                    <img src="Imagens/concerto-beneficente.jpg" alt="Público assistindo a banda em uma praça, com caixas de arrecadação de alimentos ao lado." style="margin-top: 2rem; border-radius: 0.5rem;">
+                    <img src="Imagens/concerto-beneficente.webp" alt="Público assistindo a banda em uma praça, com caixas de arrecadação de alimentos ao lado." style="margin-top: 2rem; border-radius: 0.5rem;">
                 </div>
             </div>
         </section>
@@ -111,18 +111,18 @@
         <section id="voluntariado" class="cards-section"> <!-- Seção de Voluntariado, utiliza a mesma estrutura dos valores -->
             <h2 class="section-title">Faça Parte da Mudança</h2>
             <div class="grid">
-                <div class="card">
+                <article class="card">
                     <h3>Seja um Voluntário</h3>
                     <p>Você tem habilidades administrativas, de comunicação ou simplesmente vontade de ajudar? Precisamos de voluntários para organizar eventos, buscar patrocínios e apoiar nossa logística. Sua ajuda é fundamental.</p>
-                </div>
-                <div class="card">
+                </article>
+                <article class="card">
                     <h3>Doe um Instrumento</h3>
                     <p>Muitos jovens talentosos não têm condições de adquirir um instrumento. Se você tem um instrumento musical em bom estado que não usa mais, sua doação pode transformar a vida de alguém.</p>
-                </div>
-                <div class="card">
+                </article>
+                <article class="card">
                     <h3>Apoio Financeiro</h3>
                     <p>Sua doação financeira nos ajuda a custear uniformes, manutenção de instrumentos, transporte para apresentações e o lanche de nossos jovens músicos. Qualquer valor faz uma grande diferença.</p>
-                </div>
+                </article>
             </div>
         </section>
         
@@ -130,29 +130,69 @@
              <h2 class="section-title">Como Doar</h2>
                <div class="grid">
                  <div class="contact-box">
-                     <h3>Doação via PIX</h3>
-                     <p>Use nossa chave PIX para uma doação rápida e segura.</p>
-                     <p><strong>Chave PIX (CNPJ):</strong><br>00.123.456/0001-78</p>
+                    <h3>Doação via PIX</h3>
+                    <p>Use nossa chave PIX para uma doação rápida e segura.</p>
+                    <dl>
+                    <dt>Chave PIX (CNPJ):</dt>
+                    <dd>00.123.456/0001-78</dd>
+                    </dl>
                  </div>
-                  <div class="contact-box">
-                     <h3>Conta Bancária</h3>
-                     <p>Você também pode doar diretamente em nossa conta.</p>
-                     <p><strong>Banco do Brasil</strong><br>Agência: 1234-5<br>Conta: 54321-0</p>
-                 </div>
+                 
+                 <div class="contact-box">
+                    <h3>Conta Bancária</h3>
+                    <p>Você também pode doar diretamente em nossa conta.</p>
+                    <dl>
+                    <dt>Banco do Brasil</dt>
+                    <dd>Agência: 1234-5<br>Conta: 54321-0</dd>
+                    </dl>
+                </div>
                </div>
         </section>
 
     </main>
+
+
 
     <footer class="main-footer">
         <div class="container">
             <p>&copy; 2025 Banda Marcial Alvorada. Todos os direitos reservados.</p>
             <p>Erechim, RS - CNPJ: 00.123.456/0001-78</p>
             <p class="credits">Desenvolvido por João Zardo.</p>
-        </div>
+
+            <div class="theme-selector" role="radiogroup" aria-labelledby="theme-label">
+                <span id="theme-label" class="sr-only">Escolha um tema de cores</span> <!-- sr-only esconde visualmente, mas é lido */} -->
+                
+                <button type="button" class="theme-button theme-button-light" data-theme="light" aria-checked="true" role="radio"
+                        aria-labelledby="theme-icon-light theme-text-light">
+                    <span id="theme-icon-light" aria-hidden="true">☀️</span>
+                    <span id="theme-text-light" class="sr-only">Tema Claro</span>
+                </button>
+        
+                <!-- Botão para Tema Escuro -->
+                <button type="button" class="theme-button theme-button-dark" data-theme="dark" aria-checked="false" role="radio"
+                        aria-labelledby="theme-icon-dark theme-text-dark"> <!-- APONTA PARA OS IDs INTERNOS -->
+                    <span id="theme-icon-dark" aria-hidden="true">🌙</span> <!-- ID e aria-hidden -->
+                    <span id="theme-text-dark" class="sr-only">Tema Escuro</span> <!-- ID *-->
+                </button>
+
+               <!-- Botão para Tema Alto Contraste -->
+                <button type="button" class="theme-button theme-button-contrast" data-theme="contrast" aria-checked="false" role="radio"
+                        aria-labelledby="theme-icon-contrast theme-text-contrast"> 
+                    <span id="theme-icon-contrast" aria-hidden="true">◑</span> 
+                    <span id="theme-text-contrast" class="sr-only">Tema Alto Contraste</span>
+                </button>
+
+            </div>
+            </div>
     </footer>
+
+
+
+
+
     <script src="js/menu.js"></script> 
     <script src="js/templates.js"></script> <!-- Precisa ficar antes de router -->
+    <script src="js/theme-switcher.js"></script>
     <script src="js/router.js"></script>
 </body>
 </html>

@@ -13,31 +13,51 @@
   /* Cores Primárias (Azul) */
   --color-primary-dark: #1E3A8A;   /* Azul Escuro */
   --color-primary-base: #152cb3;   /* Azul Principal */
-  --color-primary-light: #2563eb;  /* Azul Claro */
+  --color-primary-light: #1D50BF;  /* Azul pouco mais claro */
+  --color-primarylg-dark: #1E3A8A; /* legend e alguns títulos */
+  --color-primaryck-dark: #1E3A8A;     /* check do cadastro */
+  --color-primarybd-dark: #1E3A8A;     /* badge do cadastro */
+  --color-primaryacc-base: #152cb3;   /* Cor botão temas selecionado*/
+  --color-primarymn-dark:  #1E3A8A; /* escrita dos títulos do menu*/
+
 
   /* Cores Secundárias (Amarelo) */
   --color-secondary-dark: #d9a106; /* Amarelo Escuro */
   --color-secondary-base: #FBBF24; /* Amarelo Principal */
   --color-secondary-light: #FEF3C7;/* Amarelo Claro */
-  
+  --color-secondarybt-base: #FBBF24; /* Botão Principal */
+  --color-secondarybtm-base: #FBBF24; /* botão do menu mobile */
+
   /* Cores Neutras */
   --color-neutral-900: #111827; /* Quase Preto (Títulos) */
-  --color-neutral-700: #374151; /* Cinza Escuro (Texto) */
-  --color-neutral-500: #6B7280; /* Cinza Médio (Texto Secundário) */
+  --color-neutral-700: #374150; /* Cinza Escuro (Texto) */
+  --color-neutral-500: #53585F; /* Cinza Médio (Texto Secundário) alterado por causa da acessibilidade*/
   --color-neutral-300: #D1D5DB; /* Cinza Médio (Bordas) */
   --color-neutral-200: #e2e8f0; /* Cinza Suave/Ardósia (Form) */
   --color-neutral-100: #F3F4F6; /* Cinza Claro (Fundos) */
   --color-neutral-0: #FFFFFF;   /* Branco */
+  --color-neutraltxt-0: #FFFFFF;
+  --color-neutraltxt-900: #111827; /*título de seção clara*/
+  --color-footer:  #374150;
+  --color-neutraltxt-200: #e2e8f0; /* hover do check */
+  --color-neutrald-700: #374150; /* Botão cadastro desativado e cancelar */
+  --color-neutralacc-100: #F3F4F6; /* botões temas não selecionados*/
+  --color-neutralmn-0: #FFFFFF;
 
   /* Cores de Feedback (para alertas, etc.) */
-  --color-success-text: #065F46;      /* Verde escuro para texto */
-  --color-success-border: #6EE7B7;    /* Verde médio para borda */
-  --color-success-bg: #D1FAE5;        /* Verde claro para fundo */
-  
-  --color-error-text: #991B1B;        /* Vermelho escuro para texto */
-  --color-error-border: #FCA5A5;      /* Vermelho médio para borda */
-  --color-error-bg: #FEE2E2;          /* Vermelho claro para fundo */
+  --color-danger: #dc3545;
+  --color-danger-dark-text: #721c24;
+  --color-danger-light-bg: #f8d7da;
+  --color-danger-border: #f5c6cb;
+  --box-shadow-danger: 0 0 0 3px rgba(220, 53, 69, 0.25);
 
+  --color-success: #28a745;
+  --color-success-dark-text: #155724;
+  --color-success-light-bg: #d4edda;
+  --color-success-border: #c3e6cb;
+  --box-shadow-success: 0 0 0 3px rgba(40, 167, 69, 0.25);
+
+  --color-info: #17a2b8;
 
   /* --- TIPOGRAFIA HIERÁRQUICA (Mínimo de 5 tamanhos) --- */
   --font-base: 'Inter', sans-serif;
@@ -76,20 +96,4 @@
   --transition-translate-light: translateY(-5px);
   --transition-border: border-color 0.3s ease;
   --transition-seta: transform 0.2s ease-in-out;
-
-
-/* Cores de Feedback (para alertas, etc.) */
-  --color-danger: #dc3545;
-  --color-danger-dark-text: #721c24;
-  --color-danger-light-bg: #f8d7da;
-  --color-danger-border: #f5c6cb;
-  --box-shadow-danger: 0 0 0 3px rgba(220, 53, 69, 0.25);
-
-  --color-success: #28a745;
-  --color-success-dark-text: #155724;
-  --color-success-light-bg: #d4edda;
-  --color-success-border: #c3e6cb;
-  --box-shadow-success: 0 0 0 3px rgba(40, 167, 69, 0.25);
-
-  --color-info: #17a2b8;
 }

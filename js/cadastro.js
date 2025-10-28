@@ -35,6 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
         formGroup.classList.add('error');
         const errorMessage = formGroup.querySelector('.validation-message');
         errorMessage.textContent = message;
+        input.setAttribute('aria-invalid', 'true');
     }
 
     function showSuccess(input) {
@@ -43,6 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
         formGroup.classList.add('success');
         const errorMessage = formGroup.querySelector('.validation-message');
         errorMessage.textContent = '';
+        input.setAttribute('aria-invalid', 'false');
     }
     
     // Limpa a validação (para quando o usuário está digitando)
@@ -52,11 +54,22 @@ document.addEventListener('DOMContentLoaded', () => {
         formGroup.classList.remove('success');
         const errorMessage = formGroup.querySelector('.validation-message');
         errorMessage.textContent = '';
+        input.removeAttribute('aria-invalid');
     }
 
     // Feedback (Modal/Toast)
-    function showModal() { modal.style.display = 'flex'; setTimeout(() => modal.classList.add('show'), 10); }
-    function hideModal() { modal.classList.remove('show'); setTimeout(() => modal.style.display = 'none', 300); }
+    function showModal() { modal.style.display = 'flex'; setTimeout(() => modal.classList.add('show'), 10);
+        modalCancelBtn.focus(); 
+    }
+     
+    function hideModal() {
+    modal.classList.remove('show');
+    setTimeout(() => {
+        modal.style.display = 'none';
+        submitButton.focus(); 
+    }, 300);
+}
+
     function showToast() {
         toast.style.display = 'block';
         setTimeout(() => toast.classList.add('show'), 10);
@@ -155,6 +168,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+
+
     // --- 4. FUNÇÃO DE CHECAGEM DO BOTÃO ---
     // NÃO MOSTRA erros, apenas checa os valores para o botão.
     function checkButtonState() {
@@ -218,18 +233,26 @@ document.addEventListener('DOMContentLoaded', () => {
     cidadeInput.addEventListener('blur', () => validateRequiredText(cidadeInput));
     estadoInput.addEventListener('blur', () => validateRequiredText(estadoInput));
 
-    // Tags (clique)
+// Tags (clique)
     allTags.forEach(tag => {
+        // Listener de CLIQUE
         tag.addEventListener('click', () => {
             tag.classList.toggle('selected');
-            checkButtonState(); // Checa o botão
-            validateTags();     // Mostra erro/sucesso nas tags
-            updateBadgeStatus();
+
+            // [A11Y] Atualiza ARIA
+            const isSelected = tag.classList.contains('selected');
+            tag.setAttribute('aria-checked', isSelected ? 'true' : 'false'); 
+
+            // Chama as funções DEPOIS que o estado mudou
+            checkButtonState(); 
+            validateTags();     
+            updateBadgeStatus(); 
         });
+
         tag.addEventListener('keydown', (e) => {
             if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); tag.click(); }
         });
-    });
+     });
 
     // Envio do Formulário (Submit)
     form.addEventListener('submit', (e) => {
@@ -278,6 +301,44 @@ document.addEventListener('DOMContentLoaded', () => {
         showToast();
     });
 
+    // --- [A11Y] NAVEGAÇÃO POR TECLADO PARA O MODAL ---
+    document.addEventListener('keydown', (e) => {
+        // Só executa se o modal estiver visível
+        if (!modal.classList.contains('show')) {
+            return;
+        }
+
+        // [A11Y] Fechar com a tecla ESCAPE
+        if (e.key === 'Escape') {
+            e.preventDefault();
+            hideModal();
+        }
+
+        // [A11Y] "Focus Trap" (Prender o TAB dentro do modal)
+        if (e.key === 'Tab') {
+            // Seus dois únicos elementos focáveis dentro do modal:
+            const focusableElements = [modalCancelBtn, modalConfirmBtn];
+            const firstElement = focusableElements[0];
+            const lastElement = focusableElements[1];
+
+            if (e.shiftKey) { 
+                // Se o usuário apertar SHIFT + TAB (voltando)
+                if (document.activeElement === firstElement) {
+                    // Se o foco está no PRIMEIRO item, pule para o ÚLTIMO
+                    e.preventDefault();
+                    lastElement.focus();
+                }
+            } else { 
+                // Se o usuário apertar TAB (avançando)
+                if (document.activeElement === lastElement) {
+                    // Se o foco está no ÚLTIMO item, pule para o PRIMEIRO
+                    e.preventDefault();
+                    firstElement.focus();
+                }
+            }
+        }
+    });
+    
     // Chamada inicial para definir o estado do botão ao carregar a página
     checkButtonState(); 
 });

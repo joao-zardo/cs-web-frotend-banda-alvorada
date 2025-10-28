@@ -39,6 +39,13 @@
     margin: var(--space-xs) auto var(--space-lg) auto; /*Define a margem superior (0.5rem), a margem da direita (auto), a margem inferior (2rem) e a margem da esquerda (auto). Como esquerda e direita é auto, vai centralizar*/
 } 
 
+.container .team-section h2 { 
+    font-size: var(--font-size-h4);
+    color: var(--color-neutral-500);
+    text-align: center;
+    margin: var(--space-xs) auto var(--space-lg) auto; /*Define a margem superior (0.5rem), a margem da direita (auto), a margem inferior (2rem) e a margem da esquerda (auto). Como esquerda e direita é auto, vai centralizar*/
+} 
+
 
 /* --- Breakpoints Responsivos para página da equipe (Mínimo de 5) --- */
 @media (min-width: 576px) {
@@ -121,7 +128,7 @@
     grid-column: span 4; /* Cada membro da administração ocupa 4 colunas, resultando em 3 membros em uma linha */
 }
 .grid-equipe .team-member img { /*mais específico para as imagens dos membros da equipe*/
-    width: calc((1200 - (var(--space-sm) * 11 - 2 * var(--space-md))) / 12); /* Calcula a largura da imagem para preencher a célula da grade, considerando os espaços entre as colunas */
-    height: calc((1200 - (var(--space-sm) * 11 - 2 * var(--space-md))) / 12); /* Calcula a largura da imagem para preencher a célula da grade, considerando os espaços entre as colunas */
+    max-width: 75px;
+    max-height: 75px;
 }
 }

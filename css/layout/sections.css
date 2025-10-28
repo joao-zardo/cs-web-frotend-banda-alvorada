@@ -51,6 +51,10 @@ section {
     gap: var(--space-lg);
 }
 
+.contact-section h2 {
+    color: var(--color-neutraltxt-900);
+}
+
 .contact-section { /*Regra geral para a seção: Cria a seção com fundo amarelo principal e texto branco*/
     background-color: var(--color-secondary-base); /* Amarelo */
     color: var(--color-neutral-0); /* Texto dos cartões branco. O título continua preto pois há uma regra específica para ele em .section-title */

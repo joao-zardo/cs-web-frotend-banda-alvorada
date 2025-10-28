@@ -24,12 +24,12 @@
             aria-controls="nav-links">
       &#9776; </button>
     
-    <ul class="nav-links" id="nav-links">
+    <ul class="nav-links" id="nav-links" role="none" aria-label="Projetos Sociais">
       <li><a href="index.html" class="nav-link active">Início</a></li>
 
 <li class="dropdown-item"> 
       
-      <a href="projetos.html" class="nav-link">
+      <a href="projetos.html" class="nav-link" aria-haspopup="true">
         Projetos Sociais
         <span class="seta-desktop">&#9662;</span> 
       </a>
@@ -54,7 +54,7 @@
         <section class="welcome-section"> <!--Seção de boas-vindas-->
             <h1>Banda Marcial Alvorada</h1> <!--H1 é o título mais importante da página-->
             <p>Música, disciplina e transformação social. Conheça a nossa batida que move corações e constrói futuros.</p> <!--Parágrafo introdutório-->
-            <img src="imagens/hero-desktop.jpg" alt="Apresentação da Banda Marcial Alvorada em um desfile cívico" style="margin-top: 2rem; border-radius: 0.5rem;"> <!--Imagem principal da página-->
+            <img src="imagens/hero-desktop.webp" alt="Apresentação da Banda Marcial Alvorada em um desfile cívico" style="margin-top: 2rem; border-radius: 0.5rem;"> <!--Imagem principal da página-->
         </section>
 
         <section id="sobre" class="about-section"> <!--Seção sobre nós. O uso do id serve para permitir a criação de links diretos para partes específicas do conteúdo da página (id="sobre", id="valores", id="contato")-->
@@ -69,7 +69,7 @@
                     </p>
                 </div>
                 <div> <!--div "filho" define o que vai na segunda coluna-->
-                    <img src="imagens/banner-história.jpg" alt="Membros da banda ensaiando em uma sala." style="margin-top: 2rem; border-radius: 0.5rem;">
+                    <img src="imagens/banner-história.webp" alt="Membros da banda ensaiando em uma sala." style="margin-top: 2rem; border-radius: 0.5rem;">
                 </div>
             </div>
         </section>
@@ -85,7 +85,7 @@
                     <h3>Comunidade</h3>
                     <p>Somos uma família unida pela música, onde o apoio mútuo e o respeito são nossos maiores valores.</p>
                 </div>
-                <div class="card"> <!--a class dos cards é a mesma, pois no style.css será apenas um conjunto de códigos usado para editar os 3-->
+                <div class="card">
                     <h3>Paixão</h3>
                     <p>A energia que nos impulsiona a superar limites e a transmitir emoção em cada nota que tocamos.</p>
                 </div>
@@ -95,21 +95,21 @@
         <section id="projetos" class="cards-section"> <!-- Seção de Valores -->
             <h2 class="section-title">Nossos Projetos</h2>
             <div class="grid">
-                <div class="card">
+                <article class="card">
                     <h3>Oficinas Musicais</h3>
                     <p>Levamos a música para além dos nossos ensaios. Nossos membros realizam oficinas gratuitas de percussão e sopro em escolas públicas e centros comunitários da região. </p>
                     <a href="projetos.html#oficinas" class="project-button">Leia Mais</a>
-                </div>
-                <div class="card">
+                </article>
+                <article class="card">
                     <h3>Conforto Musical</h3>
                     <p>Organizamos visitas e apresentações especiais em formato reduzido para instituições de longa permanência (casas de repouso), hospitais e centros de acolhimento em nossa cidade.</p>
                     <a href="projetos.html#solidaria" class="project-button">Leia Mais</a>
-                </div>
-                <div class="card"> <!--a class dos cards é a mesma, pois no style.css será apenas um conjunto de códigos usado para editar os 3-->
+                </article>
+                <article class="card">
                     <h3>Concerto Solidário</h3>
                     <p>Semestralmente, promovemos um "Ensaio Aberto Beneficente" em uma praça pública, convidando toda a população para assistir e participar com 1 kg de alimento, que são destinados à instituições de caridade.</p>
                     <a href="projetos.html#beneficente" class="project-button">Leia Mais</a>
-                </div>
+                </article>
             </div>
         </section>
 
@@ -122,27 +122,56 @@
                     <p>Centro, Erechim - RS</p>
                     <p>CEP: 99700-000</p>
                 </div>
-                 <div class="contact-box">
+                <div class="contact-box">
                     <h3>Fale Conosco</h3>
-                    <p><strong>Email:</strong> <!--strong significa negrito-->
-                        <a href="mailto:contato@bandaalvorada.com">contato@bandaalvorada.com</a> <!--mailto cria um link que abre o programa de email do usuário ao clicar no link-->
-                    </p>
-                    <p><strong>Telefone:</strong> <a href="tel:+5554999998888">(54) 99999-1234</a></p> <!--tel cria um link que abre o aplicativo de telefone do usuário ao clicar no link-->
+                <dl><dt>Email:</dt> <dd> <a href="mailto:contato@bandaalvorada.com">contato@bandaalvorada.com</a>
+                    </dd>
+                <dt>Telefone:</dt>
+                    <dd>
+                        <a href="tel:+5554999998888">(54) 99999-1234</a>
+                    </dd>
+                </dl> 
                 </div>
-             </div>
         </section>
 
     </main>
 
-    <footer class="main-footer"> <!-- Rodapé -->
+    <footer class="main-footer">
         <div class="container">
             <p>&copy; 2025 Banda Marcial Alvorada. Todos os direitos reservados.</p>
             <p>Erechim, RS - CNPJ: 00.123.456/0001-78</p>
-            <p class="credits">Desenvolvido por João Zardo.</p> <!--Créditos no rodapé estilizado-->
-        </div>
+            <p class="credits">Desenvolvido por João Zardo.</p>
+
+            <div class="theme-selector" role="radiogroup" aria-labelledby="theme-label">
+                <span id="theme-label" class="sr-only">Escolha um tema de cores</span> <!-- sr-only esconde visualmente, mas é lido */} -->
+                
+                <button type="button" class="theme-button theme-button-light" data-theme="light" aria-checked="true" role="radio"
+                        aria-labelledby="theme-icon-light theme-text-light">
+                    <span id="theme-icon-light" aria-hidden="true">☀️</span>
+                    <span id="theme-text-light" class="sr-only">Tema Claro</span>
+                </button>
+        
+                <!-- Botão para Tema Escuro -->
+                <button type="button" class="theme-button theme-button-dark" data-theme="dark" aria-checked="false" role="radio"
+                        aria-labelledby="theme-icon-dark theme-text-dark"> <!-- APONTA PARA OS IDs INTERNOS -->
+                    <span id="theme-icon-dark" aria-hidden="true">🌙</span> <!-- ID e aria-hidden -->
+                    <span id="theme-text-dark" class="sr-only">Tema Escuro</span> <!-- ID *-->
+                </button>
+
+               <!-- Botão para Tema Alto Contraste -->
+                <button type="button" class="theme-button theme-button-contrast" data-theme="contrast" aria-checked="false" role="radio"
+                        aria-labelledby="theme-icon-contrast theme-text-contrast"> 
+                    <span id="theme-icon-contrast" aria-hidden="true">◑</span> 
+                    <span id="theme-text-contrast" class="sr-only">Tema Alto Contraste</span>
+                </button>
+
+            </div>
+            </div>
     </footer>
+
     <script src="js/menu.js"></script> 
     <script src="js/templates.js"></script> <!-- Precisa ficar antes de router -->
+    <script src="js/theme-switcher.js"></script>
     <script src="js/router.js"></script>
 </body>
 </html>    

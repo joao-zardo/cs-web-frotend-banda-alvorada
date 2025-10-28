@@ -26,7 +26,7 @@
   background: none;
   border: none;
   cursor: pointer;
-  color: var(--color-neutral-100); /* Cor do ícone */
+  color: var(--color-neutraltxt-0); /* Cor do ícone */
 }
 
 /* --- Lista de Links (Mobile - Escondido por padrão) --- */
@@ -44,10 +44,24 @@
   top: 100%; /* Começa logo abaixo do header */
   left: 0;
   width: 100%;
-  background-color: var(--color-neutral-0); /* Fundo branco para o menu */
+  background-color: var(--color-neutralmn-0); /* Fundo branco para o menu */
   box-shadow: var(--box-shadow-md);
   z-index: 1001; /* Acima do cabeçalho */
 }
+
+/* "X" para fechar o menu aberto */
+.hamburger-menu.is-active {
+  font-size: 0;
+} 
+
+.hamburger-menu.is-active::before {
+    content: '\00d7'; /* O caractere "X" */
+    font-size: var(--font-size-h3); /* Restaura o tamanho da fonte */
+    font-weight: bold; /* Deixa o X mais grosso */
+    display: block; /* Garante que ele ocupe espaço */
+    transform: rotate(90deg); 
+}
+
 
 /* --- CLASSE ATIVA (Quando o menu é aberto pelo JS) --- */
 .nav-links.is-active {
@@ -67,7 +81,7 @@
   display: block;
   padding: var(--space-md) var(--space-sm);
   text-decoration: none;
-  color: var(--color-neutral-700);
+  color: var(--color-primarymn-dark);
   border-bottom: 1px var(--color-neutral-300) solid;
 }
 
@@ -100,7 +114,7 @@
 
 .submenu li {
 
-  color: var( --color-neutral-700); /* Exemplo: um cinza mais claro */
+  color: var( --color-neutral-700); /* cinza mais claro */
   padding-top: var(--space-xs);
   padding-bottom: var(--space-xs);
   font-size: var(--font-size-p);
@@ -159,7 +173,7 @@
   }
 
    .nav-links .nav-link {
-    color: var(--color-neutral-300);
+    color: var(--color-neutraltxt-0);
    } 
 
    .nav-link.active { /* Estilo para o link ativo (página atual) */
@@ -201,7 +215,7 @@
   .submenu li a {
     display: block; /* Faz o link ocupar todo o espaço do <li> */
     padding: var(--space-xs) var(--space-sm);
-    color: var(--color-neutral-700); /* Cor do texto (ajuste) */
+    color: var(--color-neutral-700); /* Cor do texto */
     text-decoration: none;
     white-space: nowrap; /* Impede que o texto quebre em duas linhas */
   }
@@ -212,12 +226,14 @@
   }
 
    /* Quando o mouse passar sobre o <li> pai (.dropdown-item), mostra o .submenu que está dentro dele. */
-  .nav-links .dropdown-item:hover .submenu {
+  .nav-links .dropdown-item:hover .submenu,
+  .nav-links .dropdown-item.is-open .submenu {
     display: block; /* Mostra o submenu */
   }
 
   /* Gira a seta quando o menu está aberto */
-  .nav-links .dropdown-item:hover .seta-desktop {
+  .nav-links .dropdown-item:hover .seta-desktop,
+ .nav-links .dropdown-item.is-open .seta-desktop {
     transform: rotate(180deg); /* Vira a seta para cima */
   }
 }

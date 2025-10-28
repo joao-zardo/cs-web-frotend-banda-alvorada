@@ -24,11 +24,11 @@
             aria-controls="nav-links">
                 &#9776; </button>
 
-            <ul class="nav-links" id="nav-links">
+            <ul class="nav-links" id="nav-links" role="none" aria-label="Projetos Sociais">
                 <li><a href="index.html" class="nav-link">Início</a></li>
                 <li class="dropdown-item"> 
 
-                    <a href="projetos.html" class="nav-link">
+                    <a href="projetos.html" class="nav-link" aria-haspopup="true">
                         Projetos Sociais
                         <span class="seta-desktop">&#9662;</span> 
                     </a>
@@ -58,91 +58,108 @@
                     Por favor, corrija os erros no formulário antes de enviar.
                 </div>
 
-                <fieldset> 
-                    <legend>Dados Pessoais</legend>
-                    <div class="form-group">
-                        <label for="nome">Nome Completo</label>
-                        <input type="text" id="nome" name="nome" required placeholder="Digite seu nome completo">
-                        <small class="validation-message"></small>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">E-mail</label>
-                        <input type="email" id="email" name="email" required placeholder="seuemail@exemplo.com">
-                        <small class="validation-message"></small>
-                    </div>
-                    <div class="form-group">
-                        <label for="cpf">CPF</label>
-                        <input type="text" id="cpf" name="cpf" required pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" placeholder="000.000.000-00" maxlength="14">
-                        <small class="validation-message"></small>
-                    </div>
-                    <div class="form-group">
-                        <label for="telefone">Telefone</label>
-                        <input type="tel" id="telefone" name="telefone" required pattern="\(\d{2}\) \d{5}-\d{4}" placeholder="(00) 00000-0000" maxlength="15">
-                        <small class="validation-message"></small>
-                    </div>
-                    <div class="form-group">
-                        <label for="nascimento">Data de Nascimento (opcional)</label>
-                        <input type="date" id="nascimento" name="nascimento">
-                        <small class="validation-message"></small>
-                    </div>
-                </fieldset>
 
-                <fieldset>
-                    <legend>Endereço</legend>
-                    <div class="form-group">
-                        <label for="cep">CEP</label>
-                        <input type="text" id="cep" name="cep" required placeholder="00000-000" maxlength="9">
-                        <small class="validation-message"></small>
-                    </div>
-                    <div class="form-group">
-                        <label for="endereco">Endereço (Rua e Número)</label>
-                        <input type="text" id="endereco" name="endereco" required placeholder="Ex: Rua Brasil, 123">
-                        <small class="validation-message"></small>
-                    </div>
-                    <div class="form-group">
-                        <label for="cidade">Cidade</label>
-                        <input type="text" id="cidade" name="cidade" required placeholder="Sua cidade" pattern="[A-Za-zÀ-ÿ\s]+" title="Digite apenas letras e espaços.">
-                        <small class="validation-message"></small>
-                    </div>
-                    <div class="form-group">
-                        <label for="estado">Estado</label>
-                        <input type="text" id="estado" name="estado" required placeholder="Seu estado" pattern="[A-Za-zÀ-ÿ\s]+" title="Digite apenas letras e espaços.">
-                        <small class="validation-message"></small>
-                    </div>
-                </fieldset>
+<fieldset> 
+    <legend>Dados Pessoais</legend>
+    <div class="form-group">
+        <label for="nome">Nome Completo</label>
+        <input type="text" id="nome" name="nome" required placeholder="Digite seu nome completo" 
+               aria-describedby="nome-error">
+        <small class="validation-message" id="nome-error"></small>
+    </div>
+    <div class="form-group">
+        <label for="email">E-mail</label>
+        <input type="email" id="email" name="email" required placeholder="seuemail@exemplo.com" 
+               aria-describedby="email-error">
+        <small class="validation-message" id="email-error"></small>
+    </div>
+    <div class="form-group">
+        <label for="cpf">CPF</label>
+        <input type="text" id="cpf" name="cpf" required pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" placeholder="000.000.000-00" maxlength="14" 
+               aria-describedby="cpf-error">
+        <small class="validation-message" id="cpf-error"></small>
+    </div>
+    <div class="form-group">
+        <label for="telefone">Telefone</label>
+        <input type="tel" id="telefone" name="telefone" required pattern="\(\d{2}\) \d{5}-\d{4}" placeholder="(00) 00000-0000" maxlength="15" 
+               aria-describedby="telefone-error">
+        <small class="validation-message" id="telefone-error"></small>
+    </div>
+    <div class="form-group">
+        <label for="nascimento">Data de Nascimento (opcional)</label>
+        <input type="date" id="nascimento" name="nascimento" 
+               aria-describedby="nascimento-error"
+               aria-label="Data de Nascimento">
+        <small class="validation-message" id="nascimento-error"></small>
+    </div>
+</fieldset>
+
+<fieldset>
+    <legend>Endereço</legend>
+    <div class="form-group">
+        <label for="cep">CEP</label>
+        <input type="text" id="cep" name="cep" required placeholder="00000-000" maxlength="9" 
+               aria-describedby="cep-error">
+        <small class="validation-message" id="cep-error"></small>
+    </div>
+    <div class="form-group">
+        <label for="endereco">Endereço (Rua e Número)</label>
+        <input type="text" id="endereco" name="endereco" required placeholder="Ex: Rua Brasil, 123" 
+               aria-describedby="endereco-error">
+        <small class="validation-message" id="endereco-error"></small>
+    </div>
+    <div class="form-group">
+        <label for="cidade">Cidade</label>
+        <input type="text" id="cidade" name="cidade" required placeholder="Sua cidade" pattern="[A-Za-zÀ-ÿ\s]+" title="Digite apenas letras e espaços." 
+               aria-describedby="cidade-error">
+        <small class="validation-message" id="cidade-error"></small>
+    </div>
+    <div class="form-group">
+        <label for="estado">Estado</label>
+        <input type="text" id="estado" name="estado" required placeholder="Seu estado" pattern="[A-Za-zÀ-ÿ\s]+" title="Digite apenas letras e espaços." 
+               aria-describedby="estado-error">
+        <small class="validation-message" id="estado-error"></small>
+    </div>
+</fieldset>
+
 
                 <fieldset>
                     <legend>Interesses</legend>
                     <div class="form-group">
                         <label>Quais áreas te interessam? (Clique para selecionar)</label>
                         <div class="tags-container" id="tags-interesses">
-                            <span class="tag" role="checkbox" tabindex="0" data-valor="percussao">Percussão</span>
-                            <span class="tag" role="checkbox" tabindex="0" data-valor="sopros">Sopros (Metais)</span>
-                            <span class="tag" role="checkbox" tabindex="0" data-valor="corpo-coreografico">Corpo Coreográfico</span>
-                            <span class="tag" role="checkbox" tabindex="0" data-valor="bandeiras">Bandeiras</span>
-                            <span class="tag" role="checkbox" tabindex="0" data-valor="logistica">Logística/Apoio</span>
+                            <span class="tag" role="checkbox" tabindex="0" data-valor="percussao" aria-checked="false" id="tag-label-percussao" aria-labelledby="tag-label-percussao">Percussão</span> <!-- aria-labelledby e id para remover erro de acessibilidade-->
+                            <span class="tag" role="checkbox" tabindex="0" data-valor="sopros" aria-checked="false" id="tag-label-sopros" aria-labelledby="tag-label-sopros">Sopros (Metais)</span> 
+                            <span class="tag" role="checkbox" tabindex="0" data-valor="corpo-coreografico" aria-checked="false" id="tag-label-corpo" aria-labelledby="tag-label-corpo">Corpo Coreográfico</span> 
+                            <span class="tag" role="checkbox" tabindex="0" data-valor="bandeiras" aria-checked="false" id="tag-label-bandeiras" aria-labelledby="tag-label-bandeiras">Bandeiras</span> 
+                            <span class="tag" role="checkbox" tabindex="0" data-valor="logistica" aria-checked="false" id="tag-label-logistica" aria-labelledby="tag-label-logistica">Logística/Apoio</span> 
                         </div>
+
                         <small class="validation-message"></small>
                     </div>
                 </fieldset>
             <div id="status-candidato" class="status-badge-container" style="display: none;">
                 <span class="badge-title">Tipo de Vaga:</span>
-                <span class="badge" id="badge-tipo-membro"></span>
+                <span class="badge" id="badge-tipo-membro" aria-live="polite"></span>
             </div>
                 <button type="submit" class="submit-button" id="btn-enviar" disabled>
                     Enviar Cadastro
                 </button>
 
             </form>
-            <img src="Imagens/junte-se.jpg" alt="Membros da banda desfilando" style="margin-top: 2rem; border-radius: 0.5rem;">
+            <img src="Imagens/junte-se.webp" alt="Membros da banda desfilando" style="margin-top: 2rem; border-radius: 0.5rem;">
         </section>
 
     </main>
 
     <div class="modal-backdrop" id="modal-confirmacao" style="display: none;">
-        <div class="modal">
-            <h2>Confirmar Envio?</h2>
-            <p>Você confirma que seus dados estão corretos?</p>
+        <div class="modal"
+         role="dialog" 
+         aria-modal="true" 
+         aria-labelledby="modal-titulo" 
+         aria-describedby="modal-descricao">
+            <h2 id="modal-titulo">Confirmar Envio?</h2> 
+            <p id="modal-descricao">Você confirma que seus dados estão corretos?</p>
             <div class="modal-botoes">
                 <button type="button" class="submit-button" id="modal-botao-cancelar">Cancelar</button>
                 <button type="button" class="submit-button" id="modal-botao-confirmar">Sim, Enviar</button>
@@ -150,19 +167,48 @@
         </div>
     </div>
 
-    <div class="toast" id="form-toast" style="display: none;">
+    <div class="toast" id="form-toast" style="display: none;" role="status" aria-live="polite">
         Inscrição enviada com sucesso! ✅
     </div>
+
     <footer class="main-footer">
         <div class="container">
             <p>&copy; 2025 Banda Marcial Alvorada. Todos os direitos reservados.</p>
             <p>Erechim, RS - CNPJ: 00.123.456/0001-78</p>
             <p class="credits">Desenvolvido por João Zardo.</p>
-        </div>
+
+            <div class="theme-selector" role="radiogroup" aria-labelledby="theme-label">
+                <span id="theme-label" class="sr-only">Escolha um tema de cores</span> <!-- sr-only esconde visualmente, mas é lido */} -->
+                
+                <button type="button" class="theme-button theme-button-light" data-theme="light" aria-checked="true" role="radio"
+                        aria-labelledby="theme-icon-light theme-text-light">
+                    <span id="theme-icon-light" aria-hidden="true">☀️</span>
+                    <span id="theme-text-light" class="sr-only">Tema Claro</span>
+                </button>
+        
+                <!-- Botão para Tema Escuro -->
+                <button type="button" class="theme-button theme-button-dark" data-theme="dark" aria-checked="false" role="radio"
+                        aria-labelledby="theme-icon-dark theme-text-dark"> <!-- APONTA PARA OS IDs INTERNOS -->
+                    <span id="theme-icon-dark" aria-hidden="true">🌙</span> <!-- ID e aria-hidden -->
+                    <span id="theme-text-dark" class="sr-only">Tema Escuro</span> <!-- ID *-->
+                </button>
+
+               <!-- Botão para Tema Alto Contraste -->
+                <button type="button" class="theme-button theme-button-contrast" data-theme="contrast" aria-checked="false" role="radio"
+                        aria-labelledby="theme-icon-contrast theme-text-contrast"> 
+                    <span id="theme-icon-contrast" aria-hidden="true">◑</span> 
+                    <span id="theme-text-contrast" class="sr-only">Tema Alto Contraste</span>
+                </button>
+
+            </div>
+            </div>
     </footer>
+
+
 
     <script src="js/menu.js"></script> 
     <script src="js/templates.js"></script> <!-- Precisa ficar antes de router -->
+    <script src="js/theme-switcher.js"></script>
     <script src="js/router.js"></script>
     <script src="js/cadastro.js"></script> 
 </body>

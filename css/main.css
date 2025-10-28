@@ -9,15 +9,18 @@
 
 /* 1. Sistema de Design (Variáveis, Mixins, etc.) */
 @import url('base/designsystem.css'); /* --color-primary, --font-size-md, etc. */
+@import url('base/themes.css'); /* Tema escuro e de alto contraste */
 
 /* 2. Base e Reset */
 @import url('base/reset.css');     /* Reseta os estilos do navegador */
 @import url('base/typography.css');/* Estilos para h1, h2, p, a, etc. */
+@import url('base/accessibility.css');
 
 /* 3. Componentes (Os blocos de LEGO independentes) */
 @import url('components/buttons.css'); /* Define .btn, .btn-primary, .btn:hover */
 @import url('components/cards.css');   /* Define .card, .card-title, .card-body */
 @import url('components/forms.css');   /* Define .form-group, .input, .label */
+@import url('components/theme-selector.css'); 
 
 /* 4. Layout (Como os componentes se encaixam na página) */
 @import url('layout/navigation.css');    /* Define .navbar, .menu-item, .dropdown, header, .main-nav */

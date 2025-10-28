@@ -4,14 +4,14 @@
 
 /* Estilo do botão CTA no menu mobile */
 .cta-button {
-  background-color: var(--color-secondary-base); /* Cor do botão CTA */
+  background-color: var(--color-secondarybtm-base); /* Cor do botão CTA */
   margin: 0;
   border-radius: 0;
 }
 
 @media (min-width: 768px) {
     .cta-button { /* Call to Action - Botão de Chamada para Ação */
-    background-color: var(--color-secondary-base);
+    background-color: var(--color-secondarybt-base);
     color: var(--color-neutral-0); /* Texto branco */
     font-weight: var(--font-weight-bold); /* Texto em negrito */
     padding: var(--space-xs) var(--space-sm); /* Espaçamento interno para não ficar "apertado" */
@@ -27,14 +27,14 @@
 /* --- Adicionado para o botão de cadastro ativo --- */
 .nav-links .cta-button.active {
     background-color: var(--color-primary-base);
-    color: var(--color-neutral-300);
+    color: var(--color-neutraltxt-0);
     cursor: default; /* Impede o efeito hover e indica que a página já está ativa */
 }
 }
 
 .project-button {
-  background-color: var(--color-secondary-base);
-  color: var( --color-neutral-0);
+  background-color: var(--color-primary-base);
+  color: var( --color-neutraltxt-0);
   padding: var(--space-xs);
   border-radius: 0.5rem;
   margin-top: var(--space-md);
@@ -47,7 +47,7 @@
     display: block;
     width: 100%;
     background-color: var(--color-primary-base);
-    color: var(--color-neutral-0);
+    color: var(--color-neutraltxt-0);
     font-weight: var(--font-weight-bold);
     font-size: var(--font-size-h4);
     padding: var(--space-sm);
@@ -57,8 +57,12 @@
     transition: var(--transition-back);
 }
 
+#modal-titulo {
+    color: var(--color-neutral-700);
+}
+
 #modal-botao-cancelar {
-    background-color: var(--color-secondary-base);
+    background-color: var(--color-neutrald-700);
 }
 
 .submit-button:hover {
@@ -66,6 +70,6 @@
 }
 
 .submit-button:disabled {
-    background-color: var(--color-neutral-300); /* Cinza claro para indicar que está desativado */
+    background-color: var(--color-neutrald-700); /* Cinza claro para indicar que está desativado */
     cursor: not-allowed; /* Muda o cursor para indicar que o botão não pode ser clicado */
 }
