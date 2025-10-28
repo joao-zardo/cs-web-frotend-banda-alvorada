@@ -8,10 +8,10 @@ Website estático e responsivo desenvolvido para a ONG Banda Marcial Alvorada (E
 
 Este projeto foi desenvolvido em 4 entregas incrementais. Os READMEs originais de cada etapa, detalhando os objetivos e implementações específicas daquele momento, foram preservados para referência histórica:
 
-* **Entrega 1:** [README_Entrega1.md](docs/README_Entrega1.md) - Fundamentos e Estruturação.
-* **Entrega 2:** [README_Entrega2.md](docs/README_Entrega2.md) - Estilização e Leiautes.
-* **Entrega 3:** [README_Entrega3.md](docs/README_Entrega3.md) - Interatividade e Funcionalidades.
-* **Entrega 4:** [README_Entrega4.md](docs/README_Entrega4.md) - Versionamento, Acessibilidade e Deploy
+* **Entrega 1:** [README_Entrega1.md](/blob/main/docs/README_Entrega1.md) - Fundamentos e Estruturação.
+* **Entrega 2:** [README_Entrega2.md](/blob/main/docs/README_Entrega2.md) - Estilização e Leiautes.
+* **Entrega 3:** [README_Entrega3.md](/blob/main/docs/README_Entrega3.md) - Interatividade e Funcionalidades.
+* **Entrega 4:** [README_Entrega4.md](/blob/main/docs/README_Entrega4.md) - Versionamento, Acessibilidade e Deploy
 
 *(Nota: O README principal (este arquivo) descreve o estado final e consolidado do projeto.)*
 
