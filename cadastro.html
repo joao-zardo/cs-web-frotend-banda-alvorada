@@ -8,7 +8,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/pages/cadastro.css">
 </head>
 <body>
 
@@ -48,15 +47,11 @@
         </nav>
     </header>
 
-    <main class="container">
+    <main class="container" id="main-content">
 
         <section class="form-section">
             <h1 class="section-title">Formulário de Cadastro</h1>
-            <p>Preencha os seus dados abaixo para se juntar à nossa comunidade...</p>
-
-    <form class="main-form" id="form-cadastro" novalidate>
             <p>Preencha os seus dados abaixo para se juntar à nossa comunidade. Entraremos em contato em breve!</p>
-
             <form class="main-form" id="form-cadastro" novalidate>
                 
                 <div class="alert alert-danger" id="form-alert" role="alert" style="display: none;">
@@ -166,7 +161,9 @@
         </div>
     </footer>
 
-    <script src="js/script.js"></script> 
+    <script src="js/menu.js"></script> 
+    <script src="js/templates.js"></script> <!-- Precisa ficar antes de router -->
+    <script src="js/router.js"></script>
     <script src="js/cadastro.js"></script> 
 </body>
 </html>
